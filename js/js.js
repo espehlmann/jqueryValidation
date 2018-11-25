@@ -5,7 +5,7 @@
  Copyright (c) 2018 by Erika Spehlmann. All rights reserved.
 This webpage validates a form for a multiplication table using jQuery
 */
-
+    <script src="js/jquery.validate.js"></script>
 //Function for when submit button is pressed
 function myFunction(){
   //check if there is already a table, delete it
