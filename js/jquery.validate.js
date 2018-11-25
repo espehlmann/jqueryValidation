@@ -46,7 +46,7 @@ $(document).ready(function(){
       },
       two: {
         required: "Please enter first number",
-        min: "Must be larger than -1000",
+        min: "Must be larger than first number",
         max: "Must be smaller than 1000",
       },
       three: {
@@ -56,7 +56,7 @@ $(document).ready(function(){
       },
       four: {
         required: "Please enter first number",
-        min: "Must be larger than -1000",
+        min: "Must be larger than third number",
         max: "Must be smaller than 1000",
       }
     },
