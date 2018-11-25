@@ -11,50 +11,49 @@ This webpage validates a form for a multiplication table using jQuery
 var least = -1000;
 var most = 1000;
 
-
+var getFirst = parseInt(document.forms["getNums"]["one"].value);
+var getSecond = parseInt(document.forms["getNums"]["three"].value);
 $(document).ready(function(){
-  var getFirst = Number(document.forms["getNums"]["one"].value);
-  var getSecond = Number(document.forms["getNums"]["three"].value);
   $("#getNums").validate({
     rules:{
-      one: {
+      first_: {
         required: true,
         min: least,
         max: most
       },
-      two: {
+      second_: {
         required: true,
         min: getFirst,
         max: most
       },
-      three: {
+      third_: {
         required: true,
         min: least,
         max: most
       },
-      four: {
+      fourth_: {
         required: true,
         min: getSecond,
         max: most
       }
     },
     messages: {
-      one: {
+      first_: {
         required: "Please enter first number",
         min: "Must be larger than -1000",
         max: "Must be smaller than 1000",
       },
-      two: {
+      second_: {
         required: "Please enter first number",
         min: "Must be larger than -1000",
         max: "Must be smaller than 1000",
       },
-      three: {
+      third_: {
         required: "Please enter first number",
         min: "Must be larger than -1000",
         max: "Must be smaller than 1000",
       },
-      four: {
+      fourth_: {
         required: "Please enter first number",
         min: "Must be larger than -1000",
         max: "Must be smaller than 1000",
