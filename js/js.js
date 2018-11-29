@@ -5,6 +5,7 @@
  Copyright (c) 2018 by Erika Spehlmann. All rights reserved.
 This webpage validates a form for a multiplication table using jQuery
 */
+
 $( document ).ready( function validate(){
   $("form").validate({
     rules:{
@@ -137,12 +138,6 @@ var v2= Number(document.forms["getNums"]["four"].value);
       }
     }
   }
-  body.appendChild(table);
-  return false;
-}
-
-// on click call fundtion aboce
-document.getElementById("button").onclick = myFunction;
   body.appendChild(table);
   return false;
 }
