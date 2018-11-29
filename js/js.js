@@ -55,6 +55,9 @@ $( document ).ready( function validate(){
   });
 });
 
+//Found this function on stack overflow
+//Determines if a number is larger than another
+// https://stackoverflow.com/questions/29451507/how-to-use-jquery-validator-to-determine-value-of-one-field-is-greater-than-anot
 $.validator.addMethod("checkValues",
 function (value, element, param){
   var $otherElement = $(param);
