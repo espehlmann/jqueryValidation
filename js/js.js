@@ -5,7 +5,61 @@
  Copyright (c) 2018 by Erika Spehlmann. All rights reserved.
 This webpage validates a form for a multiplication table using jQuery
 */
-    <script src="js/jquery.validate.js"></script>
+$( document ).ready( function validate(){
+  $("form").validate({
+    rules:{
+      first_: {
+        required: true,
+        min: -1000,
+        max: 1000
+      },
+      second_: {
+        required: true,
+        checkValues: "#one",
+        max: 1000
+      },
+      third_: {
+        required: true,
+        min: -1000,
+        max: 1000
+      },
+      fourth_: {
+        required: true,
+        checkValues: "#three",
+        max: 1000
+      }
+    },
+    messages: {
+      first_: {
+        required: "Please enter first number",
+        min: "Must be larger than -1000",
+        max: "Must be smaller than 1000",
+      },
+      second_: {
+        required: "Please enter second number",
+        checkValues: "Must be larger than first number",
+        max: "Must be smaller than 1000",
+      },
+      third_: {
+        required: "Please enter third number",
+        min: "Must be larger than -1000",
+        max: "Must be smaller than 1000",
+      },
+      fourth_: {
+        required: "Please enter fourth number",
+        checkValues: "Must be larger than third number",
+        max: "Must be smaller than 1000",
+      }
+    },
+  });
+});
+
+$.validator.addMethod("checkValues",
+function (value, element, param){
+  var $otherElement = $(param);
+  return parseInt(value, 10) >= parseInt($otherElement.val(), 10);
+});
+
 //Function for when submit button is pressed
 function myFunction(){
   //check if there is already a table, delete it
@@ -13,36 +67,17 @@ function myFunction(){
   {
     document.getElementsByTagName("body")[0].removeChild(document.getElementsByTagName("table")[0]);
   }
-
+//  validate();
+console.log("in createtable");
 //get numbers from form and make sure they are valid, throw errors if not
 var h1 = Number(document.forms["getNums"]["one"].value);
-//   if (h1 < -1000 || h1 > 1000)
-//   {
-//     alert("Invalid Number - enter a number between -1000 and 1000");
-//   }
+
 var h2= Number(document.forms["getNums"]["two"].value);
-//  if (h2 < -1000 || h2 > 1000)
-//  {
-//    alert("Invalid Number - enter a number between -1000 and 1000");
-//  }
-//  if (h2 < h1)
-//  {
-//    alert("Invalid Number - must be larger than first number");
-//  }
+
 var v1 = Number(document.forms["getNums"]["three"].value);
-//  if (v1 < -1000 || v1 > 1000)
-//  {
-//    alert("Invalid Number - enter a number between -1000 and 1000");
-//  }
+
 var v2= Number(document.forms["getNums"]["four"].value);
-//  if (v2 < -1000 || v2 > 1000)
-//  {
-//    alert("Invalid Number - enter a number between -1000 and 1000");
-//  }
-//  if (v2 < v1)
-//  {
-//    alert("Invalid Number - must be larger than first number");
-//  }
+
 
   // Make a table
   var body = document.getElementsByTagName("body")[0];
@@ -102,6 +137,12 @@ var v2= Number(document.forms["getNums"]["four"].value);
       }
     }
   }
+  body.appendChild(table);
+  return false;
+}
+
+// on click call fundtion aboce
+document.getElementById("button").onclick = myFunction;
   body.appendChild(table);
   return false;
 }
