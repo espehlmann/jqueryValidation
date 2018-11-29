@@ -11,15 +11,13 @@ This webpage validates a form for a multiplication table using jQuery
 <head>
   <title>Homework 6</title>
   <link rel="stylesheet" href="css/style.css" />
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 </head>
 
 <body>
   <h1>
     Multiplication Table
   </h1>
-<form id = "getNums" method="post" action="">
+<form id = "getNums" method="post" action="" onsubmit="myFunction()">
     First Starting Multiplicand:<br>
     <input type="number" id="one"><br>
     First Ending Multiplicand:<br>
@@ -31,6 +29,8 @@ This webpage validates a form for a multiplication table using jQuery
     <input type="submit" value="Submit" id ="button">
 </form>
 <script src="js/js.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
   <script src="js/jquery.validate.js"></script>
 </body>
 </html>
